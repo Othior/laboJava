@@ -1,0 +1,21 @@
+<div class="container">
+  <h2 class="jumbotron bg-dark text-light text-center">création de la Chambre</h2>
+  <form #f="ngForm" (ngSubmit)="createActiviter(f)" novalidate>
+      <input
+        name="nom"
+        placeholder="nom de l'activiter"
+        type="text"
+        ngModel
+        #model="ngModel"
+        required
+      >
+      <textarea
+        name="description"
+        placeholder="description de l'activiter"
+        ngModel
+      >
+      </textarea>
+      <!-- <input name="idUser" placeholder="" ngModel> -->
+      <button>création</button>
+  </form>
+</div>

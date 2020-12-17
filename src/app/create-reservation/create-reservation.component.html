@@ -1,0 +1,43 @@
+<div class="container">
+  <h2 class="jumbotron bg-dark text-light text-center">création de la Chambre</h2>
+  <form #f="ngForm" (ngSubmit)="createReservation(f)" novalidate>
+      <input
+        name="personne"
+        placeholder="nombre de personne"
+        type="number"
+        ngModel
+        #model="ngModel"
+        required
+      >
+      <input
+        name="dateArriver"
+        type="date"
+        placeholder="dateArriver"
+        ngModel
+        required
+      >
+      <input
+        name="dateDepart"
+        type="date"
+        placeholder="dateDepart"
+        ngModel
+        required
+      >
+      <input
+        name="idUser"
+        type="number"
+        placeholder="idUser"
+        ngModel
+        hidden
+      >
+      <input
+        name="idChambre"
+        type="number"
+        placeholder="idChambre"
+        ngModel
+        hidden
+      >
+      <!-- <input name="idUser" placeholder="" ngModel> -->
+      <button>création</button>
+  </form>
+</div>

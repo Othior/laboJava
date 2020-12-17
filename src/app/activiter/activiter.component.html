@@ -1,0 +1,23 @@
+<div class="container">
+  <h2 class="jumbotron bg-dark text-light text-center mt-5">Activités</h2>
+  <!-- <div class="alert alert-warning mt-3" role="alert" *ngFor="let activiter of listActiviter">
+    <p>Type d'activité : {{ activiter.nom }} </p>
+    <p>Description : {{ activiter.description }}</p>
+  </div> -->
+  <div class="btn btn-warning mb-3 text-white">Ajouter une Activité</div>
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Type d'activité </th>
+        <th scope="col">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let activiter of listActiviter">
+        <td>{{ activiter.nom }}</td>
+        <td>{{ activiter.description }}</td>
+        <td class="btn btn-danger"(click)="deleteActiviter(activiter.id)">delete</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

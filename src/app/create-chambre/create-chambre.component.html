@@ -1,0 +1,25 @@
+<div class="container">
+  <h2 class="jumbotron bg-dark text-light text-center">création de la Chambre</h2>
+  <form #f="ngForm" (ngSubmit)="createChambre(f)" novalidate>
+      <input
+        name="adresse"
+        ngModel
+        #model="ngModel"
+        required
+      >
+      <input
+        name="ville"
+        placeholder="ville"
+        ngModel
+        required
+      >
+      <input
+        name="place"
+        placeholder="place"
+        ngModel
+        required
+      >
+      <!-- <input name="idUser" placeholder="" ngModel> -->
+      <button>création</button>
+  </form>
+</div>

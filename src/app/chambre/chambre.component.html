@@ -1,0 +1,26 @@
+<div class="container">
+  <h2 class="jumbotron bg-dark mt-5 text-light text-center"> Chambre Hotel disponible </h2>
+  <!-- <div class="alert alert-warning" *ngFor="let item of listChambre">
+    <p> Adresse : {{ item.adresse }} , {{ item.ville }}</p>
+    <span>Nombre de personne : {{ item.place }}</span>
+  </div> -->
+  <div class="btn btn-warning mb-3 text-white">Ajouter une Chambre</div>
+  <table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Adresse</th>
+        <th scope="col">Ville</th>
+        <th scope="col">Place</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listChambre">
+        <td>{{ item.adresse }}</td>
+        <td>{{ item.ville }}</td>
+        <td>{{ item.place }}</td>
+        <td class="btn btn-primary"(click)="updateChambre(item.id)">edit</td>
+        <td class="btn btn-danger"(click)="deleteChambre(item.id)">delete</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
