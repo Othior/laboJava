@@ -1,5 +1,6 @@
 import { ChambreService } from './../service/chambreService/chambre.service';
 import { Component, OnInit } from '@angular/core';
+import { Chambre } from '../entitiesInterface/entitiesInterface';
 
 @Component({
   selector: 'app-update-chambre',
@@ -8,18 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateChambreComponent implements OnInit {
 
+  chambre: Chambre;
+
   constructor(
     private service: ChambreService
   ) { }
 
   ngOnInit(): void {
   }
-  /**
-   * name
-   */
-  public getChambre() {
 
-    // this.service.getChambre()
+  updateChambre(){
+
   }
 
 }

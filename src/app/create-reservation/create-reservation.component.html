@@ -1,7 +1,10 @@
 <div class="container">
-  <h2 class="jumbotron bg-dark text-light text-center">création de la Chambre</h2>
+  <h2 class="jumbotron bg-dark text-light text-center mt-3"> Création de la Chambre </h2>
   <form #f="ngForm" (ngSubmit)="createReservation(f)" novalidate>
+    <div class="form-group">
+      <label for="">Nombre de Personne :</label>
       <input
+        class="form-control"
         name="personne"
         placeholder="nombre de personne"
         type="number"
@@ -9,35 +12,47 @@
         #model="ngModel"
         required
       >
+    </div>
+    <div class="form-group">
+      <label for=""> Date d'Arriver :</label>
       <input
+        class="form-control"
         name="dateArriver"
         type="date"
         placeholder="dateArriver"
         ngModel
         required
       >
+    </div>
+    <div class="form-group">
+      <label for="">Date de Départ :</label>
       <input
+        class="form-control"
         name="dateDepart"
         type="date"
         placeholder="dateDepart"
         ngModel
         required
       >
+    </div>
+    <div class="form-group">
+
       <input
+        class="form-control"
         name="idUser"
         type="number"
         placeholder="idUser"
         ngModel
         hidden
       >
-      <input
-        name="idChambre"
-        type="number"
-        placeholder="idChambre"
-        ngModel
-        hidden
-      >
+    </div>
+    <div class="form-group">
+      <label for="">Choississez une Chambre :</label>
+      <select class="form-control" name="idChambre" *ngFor="let chambre of ListChambre">
+        <option value="{{chambre.id}}">{{chambre.adresse}}</option>
+      </select>
+    </div>
       <!-- <input name="idUser" placeholder="" ngModel> -->
-      <button>création</button>
+      <button class="btn btn-warning">création</button>
   </form>
 </div>

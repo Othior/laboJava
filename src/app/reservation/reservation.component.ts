@@ -33,8 +33,9 @@ export class ReservationComponent implements OnInit {
       console.log('err delete Reservation Component => ',err)
     })
   }
-  updateReservation(id:number,reservation:Reservation){
-    this.service.updateReservation(id,reservation);
+
+  updateReservation(id:number){
+    localStorage.setItem('idReservationChangeValue', JSON.stringify(id));
   }
 
 }

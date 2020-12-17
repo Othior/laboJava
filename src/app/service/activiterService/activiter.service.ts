@@ -25,7 +25,7 @@ export class ActiviterService {
   }
 
   public createActiviter(activiter: createActiviter){
-    return this.httpClient.post(this.url + '/create', activiter,{responseType: 'text' as 'json'});
+    return this.httpClient.post(this.url + '/create', activiter ,{responseType: 'text' as 'json'});
   }
 
   public deleteActiviter(id: number){

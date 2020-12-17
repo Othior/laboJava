@@ -1,1 +1,38 @@
-<p>update-chambre works!</p>
+<div class="container">
+  <h2 class="jumbotron bg-dark text-light text-center">Modification de la Chambre</h2>
+  <form #f="ngForm" (ngSubmit)="updateChambre(f)" novalidate>
+    <div class="form-group">
+      <label for=""> Adresse :</label>
+      <input
+        class="form-control"
+        name="adresse"
+        ngModel
+        #model="ngModel"
+        placeholder="Adresse"
+        required
+      >
+    </div>
+    <div class="form-group">
+      <label for=""> Ville :</label>
+      <input
+        class="form-control"
+        name="ville"
+        placeholder="Ville"
+        ngModel
+        required
+      >
+    </div>
+    <div class="form-group">
+      <label for=""> Nombre de Personne : </label>
+      <input
+        class="form-control"
+        name="place"
+        placeholder="Place"
+        ngModel
+        required
+      >
+    </div>
+      <!-- <input name="idUser" placeholder="" ngModel> -->
+      <button class="btn btn-warning">Modifié</button>
+  </form>
+</div>

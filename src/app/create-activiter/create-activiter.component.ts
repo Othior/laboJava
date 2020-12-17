@@ -26,6 +26,10 @@ export class CreateActiviterComponent implements OnInit {
       description: value.form.value.description
     }
 
-    // this.service.createActiviter(activiter);
+    console.log('value create-activiter component => ' , this.activiter)
+
+    // this.service.createActiviter(this.activiter).subscribe(data => {
+    //   console.log('data create-activiter component => ' , data)
+    // });
   }
 }

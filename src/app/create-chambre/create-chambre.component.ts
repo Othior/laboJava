@@ -17,6 +17,7 @@ export class CreateChambreComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
   }
 
   createChambre(value:NgForm){

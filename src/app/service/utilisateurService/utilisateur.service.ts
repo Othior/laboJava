@@ -37,4 +37,5 @@ export class UtilisateurService {
   deleteUtilisateur(id: number){
     return this.httpClient.delete(this.url + '/delete/' + id ,{ responseType: 'type' as 'json' });
   }
+
 }

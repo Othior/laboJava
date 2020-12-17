@@ -1,1 +1,58 @@
-<p>update-reservation works!</p>
+<div class="container">
+  <h2 class="jumbotron bg-dark text-light text-center mt-3"> Modification de la Réservation </h2>
+  <form #f="ngForm" (ngSubmit)="updateReservation(f)" novalidate>
+    <div class="form-group">
+      <label for="">Nombre de Personne :</label>
+      <input
+        class="form-control"
+        name="personne"
+        placeholder="nombre de personne"
+        type="number"
+        ngModel
+        #model="ngModel"
+        required
+      >
+    </div>
+    <div class="form-group">
+      <label for=""> Date d'Arriver :</label>
+      <input
+        class="form-control"
+        name="dateArriver"
+        type="date"
+        placeholder="dateArriver"
+        ngModel
+        required
+      >
+    </div>
+    <div class="form-group">
+      <label for="">Date de Départ :</label>
+      <input
+        class="form-control"
+        name="dateDepart"
+        type="date"
+        placeholder="dateDepart"
+        ngModel
+        required
+      >
+    </div>
+    <div class="form-group">
+
+      <input
+        class="form-control"
+        name="idUser"
+        type="number"
+        placeholder="idUser"
+        ngModel
+        hidden
+      >
+    </div>
+    <div class="form-group">
+      <label for="">Choississez une Chambre :</label>
+      <select class="form-control" name="idChambre" *ngFor="let chambre of ListChambre">
+        <option value="{{chambre.id}}">{{chambre.adresse}}</option>
+      </select>
+    </div>
+      <!-- <input name="idUser" placeholder="" ngModel> -->
+      <button class="btn btn-warning">Modifié</button>
+  </form>
+</div>

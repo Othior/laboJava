@@ -1,6 +1,6 @@
 <div class="container">
   <h2 class="jumbotron bg-dark mt-5 text-light text-center"> Réservation Hotel </h2>
-  <div class="btn btn-warning mb-3 text-white">Ajouter une Réservation</div>
+  <div class="mb-3"><a class="btn btn-warning" routerLink="create">Ajouter une Réservation</a></div>
   <table class="table table-striped table-dark">
     <thead>
       <tr>
@@ -14,8 +14,8 @@
         <td>{{ item.datearriver }}</td>
         <td>{{ item.datedepart }}</td>
         <td>{{ item.personne }}</td>
-        <td class="btn btn-primary "(click)="updateReservation(item.id)">edit</td>
-        <td class="btn btn-danger "(click)="deleteReservation(item.id)">delete</td>
+        <td><a class="btn btn-primary" (click)="updateReservation(item.id)" routerLink="update/{{item.id}}">Modifier</a></td>
+        <td><a class="btn btn-danger "(click)="deleteReservation(item.id)" routerLink="delete/{{item.id}}">Supprimer</a></td>
       </tr>
     </tbody>
   </table>

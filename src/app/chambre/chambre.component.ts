@@ -34,8 +34,9 @@ export class ChambreComponent implements OnInit {
       console.log('err delete Reservation Component => ',err)
     })
   }
-  updateChambre(id: number,reservation: Chambre){
-    this.service.updateChambre(id,reservation);
+
+  updateChambre(id:number){
+    localStorage.setItem('idReservationChangeValue', JSON.stringify(id));
   }
 
 }
