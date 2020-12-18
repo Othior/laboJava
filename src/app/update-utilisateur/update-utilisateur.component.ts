@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { createUtilisateur, Utilisateur } from '../entitiesInterface/entitiesInterface';
@@ -15,7 +16,8 @@ export class UpdateUtilisateurComponent implements OnInit {
   private id: number = JSON.parse(localStorage.getItem("idUserChangeValue"));
 
   constructor(
-    private service: UtilisateurService
+    private service: UtilisateurService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -40,6 +42,9 @@ export class UpdateUtilisateurComponent implements OnInit {
     this.service.updateUtilisateur(this.changeValueUtilisateur.id , this.changeValueUtilisateur).subscribe(data => {
       console.log('data update-utilisateur component => ', data);
     });
+
+    this.router.navigate(['utilisateur']);
+
     // localStorage.removeItem("idUserChangeValue");
   }
 
@@ -48,7 +53,5 @@ export class UpdateUtilisateurComponent implements OnInit {
       this.utilisateur = data;
       console.log('update - utilisateur  variable utilisateur => ', this.utilisateur)
     });
-
-
   }
 }

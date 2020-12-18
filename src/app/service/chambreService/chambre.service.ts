@@ -24,7 +24,7 @@ export class ChambreService {
   }
 
   getChambre(id: number){
-    return this.httpClient.get(this.url + '/read')
+    return this.httpClient.get(this.url + '/read/' + id)
   }
 
   createChambre(chambre: createChambre){
@@ -32,7 +32,7 @@ export class ChambreService {
   }
 
   updateChambre(id: number, chambre: Chambre){
-    return this.httpClient.put(this.url + '/update', chambre ,{ responseType: 'type' as 'json' })
+    return this.httpClient.put(this.url + '/update/' + id, chambre ,{ responseType: 'type' as 'json' })
   }
 
   deleteChambre(id: number){

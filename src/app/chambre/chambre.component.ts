@@ -32,11 +32,13 @@ export class ChambreComponent implements OnInit {
     })
     .catch(err => {
       console.log('err delete Reservation Component => ',err)
-    })
+    });
+
+    window.location.reload();
   }
 
   updateChambre(id:number){
-    localStorage.setItem('idReservationChangeValue', JSON.stringify(id));
+    localStorage.setItem('idChambreChangeValue', JSON.stringify(id));
   }
 
 }

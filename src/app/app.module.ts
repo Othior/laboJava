@@ -1,3 +1,4 @@
+import { CustomDatePipe } from './custum.pipe/custom.pipeDate';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -36,7 +37,8 @@ import { UpdateReservationComponent } from './update-reservation/update-reservat
     UpdateUtilisateurComponent,
     CreateReservationComponent,
     CreateActiviterComponent,
-    UpdateReservationComponent
+    UpdateReservationComponent,
+    CustomDatePipe
   ],
   imports: [
     BrowserModule,

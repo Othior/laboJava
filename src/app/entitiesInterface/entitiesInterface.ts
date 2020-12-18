@@ -26,19 +26,19 @@ export interface createChambre{
 
 export interface Reservation{
   id: number;
-  nbPersonne: number;
-  dateArriver: Date;
-  dateDepart: Date;
-  idUser: number;
-  idChambre: number;
+  personne: number;
+  datearriver: Date;
+  datedepart: Date;
+  iduser: number;
+  idchambre: number;
 }
 
 export interface createReservation{
-  nbPersonne: number;
-  dateArriver: Date;
-  dateDepart: Date;
-  idUser: number;
-  idChambre: number;
+  personne: number;
+  datearriver: Date;
+  datedepart: Date;
+  iduser: number;
+  idchambre: number;
 }
 
 export interface Utilisateur{

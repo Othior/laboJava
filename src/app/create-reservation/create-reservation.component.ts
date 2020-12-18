@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { createReservation } from './../entitiesInterface/entitiesInterface';
 import { ReservationService } from './../service/reservationService/reservation.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-reservation',
@@ -17,7 +18,8 @@ export class CreateReservationComponent implements OnInit {
 
   constructor(
     private service: ReservationService,
-    private serviceChambre: ChambreService
+    private serviceChambre: ChambreService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -29,13 +31,18 @@ export class CreateReservationComponent implements OnInit {
   createReservation(value: NgForm){
 
     this.reservation = {
-      nbPersonne: value.form.value.nbPersonne,
-      dateArriver: value.form.value.dateArriver,
-      dateDepart: value.form.value.dateDepart,
-      idUser: value.form.value.idUser,
-      idChambre: value.form.value.idChambre,
+      personne: value.form.value.personne,
+      datearriver: value.form.value.dateArriver,
+      datedepart: value.form.value.dateDepart,
+      iduser: value.form.value.idUser,
+      idchambre: value.form.value.idChambre,
     }
 
-    // this.service.createReservation(reservation);
+    this.service.createReservation(this.reservation).subscribe( data => {
+      alert(' votre reservation à bien été faite ;) ');
+    });
+
+    this.router.navigate(['reservation']);
+
   }
 }

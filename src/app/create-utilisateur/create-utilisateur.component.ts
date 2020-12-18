@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { createUtilisateur } from './../entitiesInterface/entitiesInterface';
 import { UtilisateurService } from './../service/utilisateurService/utilisateur.service';
 import { NgForm } from '@angular/forms';
@@ -13,7 +14,8 @@ export class CreateUtilisateurComponent implements OnInit {
   utilisateur: createUtilisateur;
 
   constructor(
-    private service: UtilisateurService
+    private service: UtilisateurService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -31,6 +33,7 @@ export class CreateUtilisateurComponent implements OnInit {
 
      this.service.createUtilisateur(this.utilisateur);
 
+     this.router.navigate(['utilisateur']);
   }
 
 }

@@ -17,7 +17,7 @@
         <td>{{ item.firstname }}</td>
         <td>{{ item.email }}</td>
         <td><a class="btn btn-primary " routerLink="update/{{ item.id }}" (click)="updateUtilisateur(item.id)"> Modifier </a></td>
-        <td><a class="btn btn-danger "  routerLink="delete/{{ item.id }}" (click)="deleteUtilisateur(item.id)"> Supprimer </a></td>
+        <td><a class="btn btn-danger " routerLink="delete/{{ item.id }}" (click)="deleteUtilisateur(item.id)"> Supprimer </a></td>
       </tr>
     </tbody>
   </table>

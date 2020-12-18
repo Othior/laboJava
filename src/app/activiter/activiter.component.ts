@@ -32,7 +32,9 @@ export class ActiviterComponent implements OnInit {
     })
     .catch(err => {
       console.log('err delete Reservation Component => ',err)
-    })
+    });
+
+    window.location.reload();
   }
 
 }

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { createActiviter } from '../entitiesInterface/entitiesInterface';
@@ -13,7 +14,8 @@ export class CreateActiviterComponent implements OnInit {
   activiter: createActiviter;
 
   constructor(
-    private service: ActiviterService
+    private service: ActiviterService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -26,10 +28,10 @@ export class CreateActiviterComponent implements OnInit {
       description: value.form.value.description
     }
 
-    console.log('value create-activiter component => ' , this.activiter)
+    this.service.createActiviter(this.activiter).subscribe(data => {
+      alert('votre activiter à bien été ajouter');
+    });
 
-    // this.service.createActiviter(this.activiter).subscribe(data => {
-    //   console.log('data create-activiter component => ' , data)
-    // });
+    this.router.navigate(['activiter']);
   }
 }

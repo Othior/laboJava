@@ -27,8 +27,8 @@ export class UtilisateurComponent implements OnInit {
   deleteUtilisateur(id: number){
     this.service.deleteUtilisateur(id).subscribe(data => {
       console.log('data delete Utilisateur Components => ', data)
-      window.history.pushState(id,'utilisateur');
     })
+    window.location.reload();
   }
   updateUtilisateur(id: number){
     localStorage.setItem('idUserChangeValue', JSON.stringify(id));

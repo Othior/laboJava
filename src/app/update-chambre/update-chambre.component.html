@@ -1,14 +1,13 @@
 <div class="container">
-  <h2 class="jumbotron bg-dark text-light text-center">Modification de la Chambre</h2>
+  <h2 class="jumbotron bg-dark text-light text-center mt-3">Modification de la Chambre</h2>
   <form #f="ngForm" (ngSubmit)="updateChambre(f)" novalidate>
     <div class="form-group">
       <label for=""> Adresse :</label>
       <input
         class="form-control"
-        name="adresse"
-        ngModel
         #model="ngModel"
-        placeholder="Adresse"
+        name="adresse"
+        ngModel="{{ chambre.adresse }}"
         required
       >
     </div>
@@ -17,8 +16,7 @@
       <input
         class="form-control"
         name="ville"
-        placeholder="Ville"
-        ngModel
+        ngModel="{{ chambre.ville }}"
         required
       >
     </div>
@@ -27,12 +25,18 @@
       <input
         class="form-control"
         name="place"
-        placeholder="Place"
-        ngModel
+        ngModel="{{ chambre.place }}"
         required
       >
     </div>
-      <!-- <input name="idUser" placeholder="" ngModel> -->
+    <div class="form-group">
+      <input
+        class="form-control"
+        name="idUser"
+        ngModel="{{ chambre.iduser }}"
+        hidden
+      >
+    </div>
       <button class="btn btn-warning">Modifié</button>
   </form>
 </div>

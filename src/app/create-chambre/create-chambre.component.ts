@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { createChambre } from '../entitiesInterface/entitiesInterface';
@@ -13,7 +14,8 @@ export class CreateChambreComponent implements OnInit {
   chambre: createChambre;
 
   constructor(
-    private service: ChambreService
+    private service: ChambreService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -31,6 +33,9 @@ export class CreateChambreComponent implements OnInit {
 
 
 
-    // this.service.createChambre(chambre)
+    this.service.createChambre(this.chambre).subscribe( data => {
+      alert('votre requête à bien été ajouté :) ');
+    })
+    this.router.navigate(['chambre']);
   }
 }

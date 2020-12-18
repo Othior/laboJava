@@ -5,11 +5,10 @@
       <label for="">Nombre de Personne :</label>
       <input
         class="form-control"
-        name="personne"
-        placeholder="nombre de personne"
-        type="number"
-        ngModel
         #model="ngModel"
+        name="nbPersonne"
+        ngModel="{{ reservation.personne }}"
+        type="number"
         required
       >
     </div>
@@ -19,8 +18,7 @@
         class="form-control"
         name="dateArriver"
         type="date"
-        placeholder="dateArriver"
-        ngModel
+        ngModel="{{ reservation.datearriver | date:'yyyy-MM-dd' }}"
         required
       >
     </div>
@@ -31,7 +29,7 @@
         name="dateDepart"
         type="date"
         placeholder="dateDepart"
-        ngModel
+        ngModel="{{ reservation.datedepart | date:'yyyy-MM-dd' }}"
         required
       >
     </div>
@@ -42,17 +40,16 @@
         name="idUser"
         type="number"
         placeholder="idUser"
-        ngModel
+        ngModel="{{ reservation.iduser }}"
         hidden
       >
     </div>
     <div class="form-group">
-      <label for="">Choississez une Chambre :</label>
-      <select class="form-control" name="idChambre" *ngFor="let chambre of ListChambre">
-        <option value="{{chambre.id}}">{{chambre.adresse}}</option>
+      <label for=""> Choississez une Chambre : </label>
+      <select class="form-control" name="idChambre" ngModel>
+        <option *ngFor="let chambre of listChambre" value="{{ chambre.id }}"> {{ chambre.adresse }} </option>
       </select>
     </div>
-      <!-- <input name="idUser" placeholder="" ngModel> -->
       <button class="btn btn-warning">Modifié</button>
   </form>
 </div>
